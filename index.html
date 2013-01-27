@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABkHSf8ZB0np2QdJ8F3OkPin3Z9/rKTmP6heX/+onuB/ZVnbvNoIyzyZyIs8mciLPKETlb3mm51/qF5gP6ednz/sZKX/mQdJ5ZkHSdgZB0nRjQ8PgZ9f34AcnV7AHx9fgCal4oAe1t5BNenlATdsJYBU1tyADpHawCXn7MAoHh//p92fP8JuK0AzGYzbcxmM+TMZjT5zGg2/tqcff7bnn/+1IZe/sxpN/7Qdkr+3KOG/8xoNvfMZjNjQL29AIROVv6UZm7/Flm6AMxmM/fMZjNgzGYzIt2aUgBGRlo9RkZaQqGcmAxGRlopRkZaHJ2UgQTMZjMn1Ylk8sxmM3xnIiz+lGZu/wg5twDMZjP84ZtHCpuIXAZeX3D7UFBj7klJXeJISFv7SEhb821ufvVISFz+8tWBAMxmM1XMZjPYZiEr/qF6gP4hnb0AzGg2/OGeVQpGRlr3RkZaXvXZhQASOdwzFz3coRI53Cnsx1IAWlpr/ZuIWQjMZjPSzGYzcWYhK/yabnX+SLirAMxpN/zgmEAKSkpe+ZuMahASOdxcFjzc+xI53Lhogeb/UFmMBUZGWvyJVkYL3KOG/0x9fgCVaG/8hE5W/sd1OgDQeEz83p1bCltbbflHREEQEjncbBI53MX09vjUEjnc/hEmdw1GRlr8klhDJdmWdvpNXnIAn3d9/oROVv4vV8MA1o5q/NaQQwpHR1vuRkZaVBI53C+SpOv+Ejncf0to4v772nsAj5Cd/ZpaQS7Zl3bzZB0nEGYgKvyfdn3/HC6TAN2kif3komEKRkZaXEdHW+v09vg7EjncZhY93PYSOdwmc3FkAI+Qnf+9Yjcm2Zd282UfKKtkHSfEkmNr+mQdJx7coYT+5aZqCp6SfgiQkJ3+xsfOJfblsgH3350A+uOeAEZGWlJZWWvyzGYzJc1qOPJoIyzzZB0nIGQdJ8xkHidf3KOH/eKrhQ/45a8ARkZa+6ChrP9GRlrmRkZa71JSZfaKi5j+RkZaLcxmM0bMZjPlczQ982QdJx9kHSeEZyIsvtyihuzMZjM59Pb4ZfXy6g1zb3QGRkZaPEZGWitGRloXiVZGDeWujQrWimT0zGYzXmYgKuBkHSdKZB0nfWklL7jMZjPG5L2q/sxmM+HMZjObzGYzssxmM+/MZzX8zGg2/s1qOP7Xj2z9zGYzywAAAABkHSd+eDxE02QeKO1kHSdyxbC1Y55GLR/MZjN7zGYzm8xmM4LMZjMtmZx/CJFlXQCHT1UWZB0nPmQdJ35kHSeiZB0nR2gkLvVkHSfHbi02+aB4f/2geH//up+k/6J6gf6fdnz+m3B3/oROVv6ZbXT+onqB+qWAhvCti5LZZiAqsH1DTPxkHSfiAAAAAD/+AABgBgAAX/oAAFgMAABXagAAVioAAFYqAABWqgAAW2gAAFvpAABYGQAAH/UAAIAGAAB5+gAAAAAAAA==" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="ZnakZorro" /> 
+	<meta name="date" content="2011-07-15" /> 
+ 	<!--link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'-->
+	<link href='css/font_PT_Sans_Narrow.css' rel='stylesheet' type='text/css'>
+ 	<link rel="stylesheet" href="css/telegap.css">
+    	<title>PhoneGap Device Ready Example</title>
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+ 	<script type="text/javascript" charset="utf-8" src="js/tire.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="rssone.list.js"></script>
+ 	<script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>
+ 	<script type="text/javascript" charset="utf-8" src="js/telegap.js"></script>
+ 	
+<script type="text/javascript" charset="utf-8">
+
+	google.load("feeds", "1");
+
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+        var id=czytajID();
+        pokazSzczecin(id);
+	//document.getElementById('test').innerHTML+='onLoad<br />';
+    }
+    
+	function onDeviceReady() {
+		document.getElementById('feeddiv').innerHTML='<h1>Czekamy</h1>';
+		document.addEventListener("resume", onResume, false);
+		document.addEventListener("pause", onPause, false);
+		document.addEventListener("online", onOnline, false);
+		document.addEventListener("offline", onOffline, false);
+		document.addEventListener("backbutton", onBackKeyDown, false);
+		document.addEventListener("menubutton", onMenuKeyDown, false);		
+		//document.getElementById('test').innerHTML='onDeviceReady end<br />';
+	        var id=czytajID();
+	        pokazSzczecin(id);
+
+		
+    }
+	
+	
+    function onResume() {
+		document.getElementById('test').innerHTML='onResume<br />';
+    }
+	
+    function onPause() {
+		document.getElementById('test').innerHTML='onPause<br />';
+    }
+	
+    function onOnline() {
+		document.getElementById('test').innerHTML='onOnline<br />';
+    }
+	
+	function onOffline() {
+		document.getElementById('test').innerHTML='onOffline<br />';
+		var id=czytajID();
+		rssfeedsetup(id);
+		
+    }
+	
+	function onBackKeyDown() {
+		document.getElementById('test').innerHTML='onBackKeyDown<br />';
+		var id=czytajID();
+		if (id) rssfeedsetup(id); else onMenuKeyDown();
+		
+    }
+	
+	function onMenuKeyDown() {
+		//document.getElementById('test').innerHTML='onMenuKeyDown<br />';
+		zgas();
+		document.getElementById("menu").style.display="block";
+		scroll();
+		
+    }
+    
+function czytajID(){
+	var id1=window.localStorage.getItem('__id__1');
+	var id=id1;
+	if (id) return id; else return 0;
+}
+
+function zapiszID(id){
+	var id1=window.localStorage.getItem('__id__1');
+	var id2=window.localStorage.getItem('__id__2');
+	window.localStorage.setItem('__id__1',id);
+	window.localStorage.setItem('__id__2',id1);
+}    
+    
+	function viewInfoKorki(raw){
+		document.getElementById('feeddiv').innerHTML+=raw;
+	}
+    
+    
+ 	function viewInfo(){
+ 		kasuj();
+		var html='<div class="auto">';
+			html+='<img src="http://www.yr.no/place/Poland/West_Pomerania/Szczecin~7530840/avansert_meteogram.png" /><br />';
+		html+='</div>';
+		document.getElementById("feeddiv").innerHTML=html;
+var script=document.createElement('SCRIPT');
+script.type='text/javascript';
+script.src='http://www.wi.zut.edu.pl/cdn/json/korki.json.php?callback=viewInfoKorki&co=czas&jak=tabela&format=joomla';
+document.getElementsByTagName('head')[0].appendChild(script);
+		
+ 	}   
+    
+    
+    
+    
+    function pokazSzczecin(id){
+    	document.getElementById("menu").style.display="none";
+    	kasuj();
+    	//var html='';
+    	//html+='<div class="arty"><div class="art">Szczecin moje miasto</div></div>';
+    	//document.getElementById("feeddiv").innerHTML=html;
+    	rssfeedsetup(id);
+    	zapal();
+    }
+    
+    
+    
+    	function rssfeedsetup(id){
+    		zapiszID(id);
+		for(var i in rssy[id]) {
+			var v = rssy[id][i].url;
+			var feedlimit=6;
+			var feedpointer=new google.feeds.Feed(v);
+			//feedpointer.includeHistoricalEntries()
+			feedpointer.setNumEntries(feedlimit);
+			feedpointer.load(displayfeed);
+		}
+    	}
+    	
+ //=========================================================================   	
+    function displayfeed(result){
+	var title=result.feed.title || 'Portal';
+	var id=czytajID();
+	var sekcja=sekcje[id];
+	var rssoutput='';
+	rssoutput+='<div class="hh1 box"><span class="pull-left">'+sekcja+'/'+title+'</span><span class="pull-right"><a href="#" class="btn btn-info btn-small">&#8657; top</a></span></div>';
+	rssoutput+='<div class="arty box">';
+	var thefeeds=result.feed.entries;
+			
+	for (var i=0; i<thefeeds.length; i++) {
+		var link  = korekta_link(thefeeds[i].link,thefeeds[i].content);
+		var image = szukaj_img(thefeeds[i].link,thefeeds[i].content);
+		rssoutput+='<div class="art">';
+		rssoutput+="<a href='javascript:void(0)' rel-title='" + thefeeds[i].title + "'  rel-link='" + link + "' rel-lokalizacja='"+result.feed.title+"' rel-sekcja='"+sekcja+"' onClick='popup_open(this);'><span class='btn btn-small pull-right czas'>" + toDate(thefeeds[i].publishedDate) + "</span></a>";
+		rssoutput+="<a href='" + link + "' class='title' title='Internet' target='_self'>" + thefeeds[i].title + "</a>";
+		rssoutput+="<div class='well'>";		
+			rssoutput+="<div class='image'>"+image+"</div>";		
+			rssoutput+=thefeeds[i].contentSnippet;		
+		rssoutput+="</div>";		
+		rssoutput+='</div>';
+	}
+	rssoutput+='</div>';
+	document.getElementById("feeddiv").innerHTML+=rssoutput;
+    }
+// =================================================================	
+    	function zgas() {document.getElementById("feeddiv").style.zIndex='0.5';}
+   	function zapal(){document.getElementById("feeddiv").style.zIndex='1.0';}
+   	function kasuj(){document.getElementById("feeddiv").innerHTML='';}
+   	function scroll() {window.scrollTo(0,0)}
+   	function koniec() {window.scrollTo(0,0)}
+   	function deviceInfo() {
+   		window.scrollTo(0,0)
+		var element = document.getElementById('feeddiv');
+		element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+		'Device PhoneGap: ' + device.phonegap + '<br />' + 
+		'Device Platform: ' + device.platform + '<br />' + 
+		'Device UUID: '     + device.uuid     + '<br />' + 
+		'Device Version: '  + device.version  + '<br />'; 
+		}
+
+	
+ </script>
+ 
+ </head>
+ 
+ 
+ <body onload="onLoad()">
+ 
+  
+  
+  <div><a href="javascript:void(0);" onClick="onMenuKeyDown();" class="btn">Menu</a> &nbsp; <b> PhoneGap test cordova</b></div>
+  
+   <div id="menu" style="display:none;"> 
+  	<a href="javascript:void(0);" onClick="pokazSzczecin(0);" class="btn btn-info">Szczecin</a>
+  	<a href="javascript:void(0);" onClick="pokazSzczecin(1);" class="btn btn-info">Wiadomosci</a>
+  	<a href="javascript:void(0);" onClick="pokazSzczecin(2);" class="btn btn-primary">InfoTech</a>
+  	<a href="javascript:void(0);" onClick="pokazSzczecin(3);" class="btn btn-primary">Dzone</a>
+  	<a href="javascript:void(0);" onClick="pokazSzczecin(4);" class="btn btn-primary">WebDev</a>
+  	<a href="javascript:void(0);" onClick="pokazSzczecin(5);" class="btn btn-primary">Code</a>
+  	<a href="javascript:void(0);" onClick="pokazSzczecin(6);" class="btn btn-inverse">WIZUT</a>
+  	<a href="javascript:void(0);" onClick="pokazSzczecin(7);" class="btn btn-inverse">Portale</a>
+  	<a href="javascript:void(0);" onClick="pokazSzczecin(8);" class="btn btn-inverse">Allegro</a>	
+ 	<a href="javascript:void(0);" onClick="viewInfo();"       class="btn ">InfoSzczecin</a>	
+ 	
+ 	<a href="javascript:void(0);" onClick="deviceInfo();"       class="btn btn-primary">device Info</a>
+ 	<a href="javascript:void(0);" onClick="koniec();"       class="btn btn-primary">Koniec</a>
+ 	
+ 	
+  </div>
+  
+  <div id="test" style="display:block; padding:0.5em; border:1px solid gray; background:#eee;"></div>
+  
+  <div id="feeddiv" class="wrapper fullwidth box"></div>
+  
+ <span class="pull-right"><a href=javascript:void(0);" onClick="scroll();" class="btn btn-info btn-small">menu &#8657; top</a></span>
+   
+
+<div style="position:fixed; left:0px; bottom:0px; background:#fff; float:left; width:96%; padding:0.1% 2%; margin:0;">
+ 	<a href="javascript:void(0);" onClick="onBackKeyDown();"  class="btn btn-small btn-inverse" style="float:left;"> <== </a>
+ 	<a href="javascript:void(0);" onClick="onBackKeyDown();"  class="btn btn-small btn-inverse" style="float:right;"> ==></a> 
+</div>
+
+  </body>
+</html>

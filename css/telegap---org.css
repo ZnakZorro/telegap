@@ -1,0 +1,71 @@
+body {font-family: 'PT Sans Narrow', sans-serif; font-size:16px; margin:0; padding:0;-webkit-tap-highlight-color:blue;}
+/*article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block;}*/
+/*article {border: 1px solid white;}*/
+div.menu{background:#124; position:absolute; top:20px; left:10px; border:1px solid #fff; padding:5px 10px; }
+a {color: #69C;	text-decoration: none; -webkit-tap-highlight-color:blue;}
+a:hover {color: #F60;}
+h1 {font: 1.7em;line-height: 110%;color: #000;}
+h1, h2, h3 {color: #000;}
+h4 {border:none; padding:0;margin:0; color:#000;}
+p {	margin: 0 0 20px;}
+p.title {background:#eee; margin:0; padding:3px; border: 1px #DDD solid;}
+#pagewrap {max-width: 98%;margin: 0 auto;}
+.wrapper {overflow: hidden;}
+#menu {}
+div.arty {}
+div.art {padding:5px;background:#fff;}
+.well     {}
+a.title {color:#258; font-size:102%; font-weight:bold; margin-top:2%;}
+div.art:nth-child(2n) {background-color: #f4f4f0;}
+div.hh1   {font-size:115%; min-height:30px; background:#248; color:white; padding:8px; margin:0;font-weight: bold;}
+div.hh1 a   {color:white; float:left;}
+.pull-right {float:right;margin-top:0;}
+.pull-left {float: left;}
+a.active {color:black !important;}
+.czas {cursor:pointer;}
+div.image {max-width:64px; max-height:48px; float:left;  margin-right:4px; display: inline-block;}
+img       {max-width:64px; max-height:48px; padding:0 !important; margin:0 !important;}
+
+#popup {display:none; background:#ddd; border:2px solid #444; padding:2px 10px; position:fixed; top:40px; left:50%; margin-left:-410px; width:800px;  max-width:95%;}
+#popup #popup_body {background:white; padding:10px; min-height:100px;line-height:160%;}
+#popup #popup_header, #popup #popup_footer{font-weight:bold; text-align:right; padding:5px; font-size:110%;}
+#popup_title {float:left; text-align:left; padding-top:5px;}
+div.auto img {max-height:100%; max-width:100%;}
+div.batony {margin:5px;}
+div.constant .btn {min-width:5em;}
+#informacje {color:white;}
+table.traffic {background:#fff; padding:5px; margin-top:5px;border:1px solid gray;}
+table.traffic tr.sectiontableentry2 {background:#f4f4f4;}
+table.traffic tr.sectiontableheader {background:#444; color:#fff;}
+
+.box {/*-webkit-border-radius:9px 9px 9px 9px; border-radius:9px 9px 9px 9px;*/}
+#title {text-align:center;color:white; padding:10px 5px; margin:0; background:#248; height:35px;}
+
+.btn-line {line-height:0 !important; padding:4px 8px !important;}
+.btn-next {float:left; line-height:20px;font-size:23px; font-weight:bold;}
+div#menu .btn {min-width:4em;}
+
+#popup {display:none; background:#ddd; border:2px solid #444; padding:2px; position:absolute; top:5%; left:5%; width:90%; margin:0; height: 80%;overflow: scroll;}
+#popup #popup_body {background:white; padding:0; min-height:150px;line-height:160%;}
+#popup #popup_header, #popup #popup_footer{font-weight:bold; text-align:right; padding:5px; font-size:110%;}
+#popup_title {float:left; text-align:left; padding-top:5px;}
+
+
+
+/*
+ * Socialite Look-a-like defaults
+ */
+.cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* html .cf { zoom: 1; }
+*:first-child+html .cf { zoom: 1; }
+.vhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+.social-buttons { display: block; list-style: none; padding: 0; margin: 20px; }
+.social-buttons > li { display: block; margin: 0; padding: 10px; float: left; }
+.social-buttons .socialite { display: block; position: relative; background: url('images/social-sprite.png') 0 0 no-repeat; }
+.social-buttons .socialite-loaded { background: none !important; }
+
+.social-buttons .twitter-share { width: 55px; height: 65px; background-position: 0 0; }
+.social-buttons .googleplus-one { width: 50px; height: 65px; background-position: -75px 0; }
+.social-buttons .facebook-like { width: 50px; height: 65px; background-position: -145px 0; }
+.social-buttons .linkedin-share { width: 60px; height: 65px; background-position: -215px 0; }
